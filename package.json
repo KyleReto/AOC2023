@@ -1,0 +1,7 @@
+{
+  "devDependencies": {
+    "@tsconfig/node20": "^20.1.4",
+    "@types/node": "^20.12.8",
+    "typescript": "^5.4.5"
+  }
+}
