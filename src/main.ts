@@ -18,9 +18,11 @@ const server = createServer(async (req: IncomingMessage, res: ServerResponse) =>
     return res.end(`Code for day ${day} not found.`);
   }
 
-  let input = fs.readFileSync('../input.txt').toString();
-
-  res.end(dayModule.main(level, input));
+  let testInput = fs.readFileSync('../testinput').toString();
+  let input = fs.readFileSync('../input').toString();
+  const output = `Test: ${dayModule.main(level, testInput)}\
+Final: ${dayModule.main(level, input)}`
+  res.end(output);
 });
 
 server.listen(port, hostname, () => {
