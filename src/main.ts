@@ -20,8 +20,22 @@ const server = createServer(async (req: IncomingMessage, res: ServerResponse) =>
 
   let testInput = fs.readFileSync('../testinput').toString();
   let input = fs.readFileSync('../input').toString();
-  const output = `Test: ${dayModule.main(level, testInput)}\
-Final: ${dayModule.main(level, input)}`
+  let testResult, finalResult: string;
+  try {
+    testResult = dayModule.main(level, testInput);
+  } catch (err){
+    testResult = "Error, check console for details.";
+    console.error(err);
+  }
+  try {
+    finalResult = dayModule.main(level, input);
+  } catch (err){
+    finalResult = "Error, check console for details.";
+    console.error(err);
+  }
+ 
+  const output = `Test: ${testResult}\n\
+Final: ${finalResult}`
   res.end(output);
 });
 

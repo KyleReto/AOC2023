@@ -9,6 +9,11 @@ export function main(level: string, input: string): string{
     }
 }
 
+/**
+ * Run the level 1 code on the problem.
+ * @param input The input string, as defined by AoC
+ * @returns The return string value.
+ */
 function level1(input: string): string{
     let calibrationValues: Array<number> = [];
     const pattern = new RegExp(/\d/g);
@@ -29,6 +34,12 @@ function level1(input: string): string{
 For level 2, numbers as words should also be interpreted as number, eg. "one" = 1.
 My approach here is to first find-replace all number-words with their digits (since we'll have to parse them later anyways)
 */
+
+/**
+ * Run the level 2 code on the problem, which is usually a more complex variant of the level 1 code.
+ * @param input The input string, as defined by AoC
+ * @returns The return string value.
+ */
 function level2(input: string): string{
     let calibrationValues: Array<number> = [];
     const digitPattern = new RegExp(/\d/g);
